@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click&Go</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+    <nav class="bg-white shadow-md px-20 py-6 flex justify-between items-center">
+        <a href="C:\Users\MSI\Desktop\tailwindTemplate\public\home page.html" class="block">
+            <h1 class="text-4xl font-bold text-[#3d69c6] hover:text-blue-800 cursor-pointer font-[Caveat]">
+            Click&Go
+            </h1>
+        </a>
+        
+        
+        
+
+        <div class="flex items-center space-x-10">
+            <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                <span class="text-xl">Wishlist</span>
+                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+            </a>
+        
+            <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                <span class="text-xl">Cart</span>
+                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l1 2m4 13a2 2 0 1 0 4 0m-4 0a2 2 0 1 1 4 0m1-4H7V6h13l-2 8H7"/>
+                </svg>
+            </a>
+        
+            <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                <span class="text-xl">Profile</span>
+                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A9.97 9.97 0 0 1 12 15.5c2.172 0 4.187.69 5.88 1.804M15.5 10a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
+                </svg>
+            </a>
+        </div>
+        
+    </nav>
+
+
+    <!-- Contenu principal -->
+    <!-- Contenu principal -->
+    <header class="flex flex-col items-start px-20 py-8 bg-white shadow-md border border-gray-200 w-full rounded-lg">
+        <h2 class="text-black text-3xl font-[Tiro Bangla]">Outdoor Yoga</h2>
+    
+        <div class="flex space-x-10 mt-2">
+            <a href="#" class="text-black underline flex items-center space-x-2 ml-40">
+                <span>Add to Wishlist</span>
+                <i class="fas fa-heart"></i>
+            </a>
+            <a href="#" class="text-black underline flex items-center space-x-2">
+                <span>Share</span>
+                <i class="fas fa-share"></i>
+            </a>
+        </div>
+    
+        <img src="Images/yoga.jpg" alt="Outdoor Yoga" class="mt-6 w-full h-96 object-cover rounded-lg shadow-md">
+    
+        <p class="text-black text-lg mt-4 font-[Tiro Bangla]">
+            Refresh your mind and body with outdoor yoga—breathe, stretch, and find your zen in nature.
+        </p>
+    
+        <!-- "About this Activity" -->
+        <div class="w-full mt-6 border-t border-gray-200 pt-6">
+            <h3 class="text-xl text-[#3d69c6]  mb-4">About this Activity</h3>
+            <ul class="space-y-2 text-black">
+                <li class="flex items-center space-x-2">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Place : Sidi Bousaid Parc</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Free cancellation</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Reserve now and pay later</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fas fa-clock"></i>
+                    <span>Duration : 1 Hour</span>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- "Highlighted reviews from others" -->
+        <div class="w-full mt-6 border-t border-gray-200 pt-6">
+            <h3 class="text-xl text-[#3d69c6]  mb-4">Highlighted reviews from others</h3>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-gray-100 p-4 rounded-lg flex items-center space-x-3 shadow">
+                    <i class="fas fa-user text-2xl"></i>
+                    <div>
+                        <p class="font-semibold">Amira</p>
+                        <div class="text-yellow-500">★★★★★</div>
+                    </div>
+                </div>
+    
+                <div class="bg-gray-100 p-4 rounded-lg flex items-center space-x-3 shadow">
+                    <i class="fas fa-user text-2xl"></i>
+                    <div>
+                        <p class="font-semibold">Eya</p>
+                        <div class="text-yellow-500">★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- "Select Participants and Date" -->
+        <div class="w-full mt-6 border-t border-gray-200 pt-6">
+            <h3 class="text-xl text-[#3d69c6] mb-4">Select Participants and date and check availability</h3>
+            
+            <div class="flex space-x-4">
+                <!-- Sélecteur de participants -->
+                <select class="px-4 py-2 rounded-lg bg-gray-200 text-black cursor-pointer">
+                    <option>Adult x1</option>
+                    <option>Adult x2</option>
+                    <option>Child</option>
+                </select>
+        
+                <!-- Sélecteur de date avec calendrier -->
+                <input type="date" class="px-4 py-2 rounded-lg bg-gray-200 text-black cursor-pointer">
+        
+                <!-- Bouton de validation -->
+                <button class="px-6 py-2 bg-[#3d69c6] text-white rounded-lg hover:bg-[#3057a4] transition duration-300">
+                    Check
+                </button>
+            </div>
+        </div>
+        <!-- Section "You may also like..." -->
+<div class="w-full mt-10">
+    <h3 class="text-xl  text-[#3d69c6] mb-4 flex items-center">
+        You may also like ... <i class="far fa-heart text-[#3d69c6] ml-2"></i>
+    </h3>
+    
+    <div class="grid grid-cols-2 gap-6">
+        <!-- Carte 1 -->
+        <!-- Activity Card 1 -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
+            <img src="Images/kayak.jpg" alt="Kayaking" class="w-full h-48 object-cover">
+            <div class="p-4 flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-semibold">Kayaking</h3>
+                    <p class="text-gray-600">From 60TND</p>
+                </div>
+                <button class="text-gray-600 hover:text-red-600">
+                    <i class="far fa-heart text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Activity Card 2 -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
+            <img src="Images/scuba.jpg" alt="Scuba Diving" class="w-full h-48 object-cover">
+            <div class="p-4 flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-semibold">Scuba Diving</h3>
+                    <p class="text-gray-600">From 100TND</p>
+                </div>
+                <button class="text-gray-600 hover:text-red-600">
+                    <i class="far fa-heart text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Activity Card 3 -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
+            <img src="Images/hiking.jpg" alt="Hiking" class="w-full h-48 object-cover">
+            <div class="p-4 flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-semibold">Hiking</h3>
+                    <p class="text-gray-600">From 25TND</p>
+                </div>
+                <button class="text-gray-600 hover:text-red-600">
+                    <i class="far fa-heart text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Activity Card 4 -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
+            <img src="Images/rafting.jpg" alt="Rafting" class="w-full h-48 object-cover">
+            <div class="p-4 flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-semibold">Rafting</h3>
+                    <p class="text-gray-600">From 80TND</p>
+                </div>
+                <button class="text-gray-600 hover:text-red-600">
+                    <i class="far fa-heart text-2xl"></i>
+                </button>
+            </div>
+        </div>
+</div>
+
+        
+    </header>
+    
+    
+    
+
+    
+    
+
+
+
+    <!-- Footer -->
+    <footer class="bg-[#3d69c6] text-white py-8 px-20 mt-15">
+
+        <div class="grid grid-cols-3 gap-8">
+            <div class="flex flex-col space-y-4 px-20">
+                <label for="language" class="block font-semibold text-white text-lg">Language</label>
+    <select id="language" class="text-gray-900 bg-gray-300 px-3 py-2 rounded w-full">
+        <option>English</option>
+        <option>French</option>
+        <option>Arabic</option>
+    </select>
+
+    <label for="currency" class="block font-semibold text-white text-lg">Currency</label>
+    <select id="currency" class="text-gray-900 bg-gray-300 px-3 py-2 rounded w-full">
+        <option>Dinar</option>
+        <option>Euro</option>
+        <option>Dollar</option>
+    </select>
+            </div>
+            
+            <div class="flex flex-col items-center space-y-4">
+                <h3 class="font-semibold mb-2 text-white">Mobile</h3>
+                <div class="flex flex-col items-center space-y-4">
+                    <img src="Images/google.png" alt="Google Play" class="w-40 h-12 object-cover">
+                    <img src="Images/app.png" alt="App Store" class="w-40 h-12 object-cover">
+                </div>
+            </div>
+    
+            <div class="flex flex-col items-center space-y-4 px-20">
+                <h3 class="font-semibold mb-2 text-center text-white">About Us</h3>
+                <ul class="space-y-2 text-center">
+                    <li><a href="#" class="hover:underline text-white">Support Client</a></li>
+                    <li><a href="#" class="hover:underline text-white">Ways You Can Pay</a></li>
+                </ul>
+                
+                <div class="flex justify-center mt-4">
+                    <img src="Images/paypal.png" alt="PayPal" class="w-56 h-16 object-contain">
+                </div>
+    
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="#" class="text-black hover:text-red-600">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-black hover:text-red-600">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

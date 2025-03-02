@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click&Go</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+    <!-- Responsive Navigation -->
+    <nav class="bg-white shadow-md px-4 sm:px-8 md:px-12 lg:px-20 py-4 md:py-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex justify-between items-center w-full md:w-auto">
+                <h1 class="text-3xl md:text-4xl font-bold text-[#3d69c6] hover:text-blue-800 cursor-pointer font-[Caveat]">
+                    Click&Go
+                </h1>
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-[#3d69c6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile/Desktop Navigation Links -->
+            <div id="menu-items" class="hidden md:flex flex-col md:flex-row items-center w-full md:w-auto md:space-x-10 mt-4 md:mt-0 space-y-4 md:space-y-0">
+                <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                    <span class="text-xl">Wishlist</span>
+                    <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </a>
+            
+                <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                    <span class="text-xl">Cart</span>
+                    <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l1 2m4 13a2 2 0 1 0 4 0m-4 0a2 2 0 1 1 4 0m1-4H7V6h13l-2 8H7"/>
+                    </svg>
+                </a>
+            
+                <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                    <span class="text-xl">Profile</span>
+                    <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A9.97 9.97 0 0 1 12 15.5c2.172 0 4.187.69 5.88 1.804M15.5 10a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow relative">
+        <div class="container mx-auto px-4 py-8 md:py-12 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-stretch">
+                <!-- Support Image Section - Responsive -->
+                <div class="w-full md:w-1/2 mb-8 md:mb-0 md:flex md:items-stretch">
+                    <div class="h-full w-full">
+                        <img src="Images/cc.jpg" alt="Support" class="w-full h-full object-cover rounded-lg shadow-md">
+                    </div>
+                </div>
+                
+                <!-- Contact Form Section - Responsive -->
+                <div class="w-full md:w-1/2 md:pl-0 lg:pl-8 flex">
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-lg w-full">
+                        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Contact us!</h2>
+                        
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" placeholder="Your name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" placeholder="you@example.com" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Phone No.</label>
+                                <div class="flex">
+                                    <select class="px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                        <option>+216</option>
+                                        <option>+33</option>
+                                        <option>+1</option>
+                                    </select>
+                                    <input type="tel" id="phone" placeholder="XXXXXXXX" class="w-full px-3 py-2 border border-gray-300 rounded-r-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <textarea id="subject" rows="4" sm:rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-[#3d69c6] text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer - Responsive -->
+    <footer class="bg-[#3d69c6] text-white py-6 sm:py-8 px-4 sm:px-8 md:px-12 lg:px-20 mt-8 md:mt-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Language and Currency Section -->
+            <div class="flex flex-col space-y-4 px-0 sm:px-4 lg:px-20">
+                <label for="language" class="block font-semibold text-white text-lg">Language</label>
+                <select id="language" class="text-gray-900 bg-gray-300 px-3 py-2 rounded w-full">
+                    <option>English</option>
+                    <option>French</option>
+                    <option>Arabic</option>
+                </select>
+
+                <label for="currency" class="block font-semibold text-white text-lg">Currency</label>
+                <select id="currency" class="text-gray-900 bg-gray-300 px-3 py-2 rounded w-full">
+                    <option>Dinar</option>
+                    <option>Euro</option>
+                    <option>Dollar</option>
+                </select>
+            </div>
+            
+            <!-- Mobile App Section -->
+            <div class="flex flex-col items-center space-y-4">
+                <h3 class="font-semibold mb-2 text-white">Mobile</h3>
+                <div class="flex flex-col items-center space-y-4">
+                    <img src="Images/google.png" alt="Google Play" class="w-32 sm:w-40 h-10 sm:h-12 object-cover">
+                    <img src="Images/app.png" alt="App Store" class="w-32 sm:w-40 h-10 sm:h-12 object-cover">
+                </div>
+            </div>
+    
+            <!-- About Us Section -->
+            <div class="flex flex-col items-center space-y-4 px-0 sm:px-4 lg:px-20">
+                <h3 class="font-semibold mb-2 text-center text-white">About Us</h3>
+                <ul class="space-y-2 text-center">
+                    <li><a href="#" class="hover:underline text-white">Support Client</a></li>
+                    <li><a href="#" class="hover:underline text-white">Ways You Can Pay</a></li>
+                </ul>
+                
+                <div class="flex justify-center mt-4">
+                    <img src="Images/paypal.png" alt="PayPal" class="w-40 sm:w-56 h-12 sm:h-16 object-contain">
+                </div>
+    
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="#" class="text-black hover:text-red-600">
+                        <i class="fab fa-facebook-f text-xl sm:text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-black hover:text-red-600">
+                        <i class="fab fa-instagram text-xl sm:text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menuItems = document.getElementById('menu-items');
+            if (menuItems.classList.contains('hidden')) {
+                menuItems.classList.remove('hidden');
+            } else {
+                menuItems.classList.add('hidden');
+            }
+        });
+
+        // Close menu when clicking on a link (mobile)
+        const menuLinks = document.querySelectorAll('#menu-items a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 768) { // Only on mobile
+                    document.getElementById('menu-items').classList.add('hidden');
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                document.getElementById('menu-items').classList.remove('hidden');
+            } else if (!document.getElementById('menu-toggle').classList.contains('active')) {
+                document.getElementById('menu-items').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

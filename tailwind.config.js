@@ -9,7 +9,8 @@ module.exports = {
         tertiary: "#6e757a",
       },
       fontFamily: {
-        body: ["Work Sans"],
+        body: ["Caveat"],
+        body:["Tiro+Bangla"]
       },
       fontSize: {
         navSize: "24px",

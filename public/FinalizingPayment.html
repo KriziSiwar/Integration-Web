@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click&Go - Finalizing Payment</title>
     <link href="style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -13,17 +12,17 @@
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
     <!-- Navbar -->
     <nav class="bg-white shadow-md px-20 py-6 flex justify-between items-center">
-        <h1 class="text-4xl font-bold text-[#3d69c6] hover:text-blue-800 cursor-pointer font-[Caveat]">
+        <a href= "home page.html" class="text-4xl font-bold text-[#3d69c6] hover:text-blue-800 cursor-pointer font-[Caveat]">
             Click&Go
-        </h1>
+        </a>
         <div class="flex items-center space-x-10">
-            <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+            <a href="Wishlist.html" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
                 <span class="text-xl">Wishlist</span>
                 <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                 </svg>
             </a>
-            <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+            <a href="cart.html" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
                 <span class="text-xl">Cart</span>
                 <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l1 2m4 13a2 2 0 1 0 4 0m-4 0a2 2 0 1 1 4 0m1-4H7V6h13l-2 8H7"/>
@@ -78,8 +77,10 @@
                     <label for="mobile" class="block text-gray-700">Mobile number *</label>
                     <input type="text" id="mobile" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#3d69c6]">
                 </div>
-                <button type="submit" class="w-full bg-[#3d69c6] text-white px-4 py-2 rounded-lg hover:bg-blue-700">Pay</button>
-            </form>
+                <a href="Payment.html" class="bg-[#3d69c6] text-white px-6 py-2 rounded-full font-semibold">
+                    Pay
+                </a>           
+             </form>
         </div>
     </main>
 
@@ -110,7 +111,7 @@
             <div class="flex flex-col items-center space-y-4 px-20">
                 <h3 class="font-semibold mb-2 text-center text-white">About Us</h3>
                 <ul class="space-y-2 text-center">
-                    <li><a href="#" class="hover:underline text-white">Support Client</a></li>
+                    <li><a href="Supportpage.html" class="hover:underline text-white">Support Client</a></li>
                     <li><a href="#" class="hover:underline text-white">Ways You Can Pay</a></li>
                 </ul>
                 <div class="flex justify-center mt-4">
@@ -127,5 +128,8 @@
             </div>
         </div>
     </footer>
+
+
+    
 </body>
 </html>

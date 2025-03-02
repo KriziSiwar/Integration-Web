@@ -13,17 +13,17 @@
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
     <!-- Navbar -->
     <nav class="bg-white shadow-md px-20 py-6 flex justify-between items-center">
-        <h1 class="text-4xl font-bold text-[#3d69c6] hover:text-blue-800 cursor-pointer font-[Caveat]">
+        <a href= "home page.html" class="text-4xl font-bold text-[#3d69c6] hover:text-blue-800 cursor-pointer font-[Caveat]">
             Click&Go
-        </h1>
+        </a>
         <div class="flex items-center space-x-10">
-            <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+            <a href="Wishlist.html" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
                 <span class="text-xl">Wishlist</span>
                 <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                 </svg>
             </a>
-            <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+            <a href="cart.html" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
                 <span class="text-xl">Cart</span>
                 <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l1 2m4 13a2 2 0 1 0 4 0m-4 0a2 2 0 1 1 4 0m1-4H7V6h13l-2 8H7"/>
@@ -109,7 +109,7 @@
         <div class="flex flex-col items-center space-y-4 px-20">
             <h3 class="font-semibold mb-2 text-center text-white">About Us</h3>
             <ul class="space-y-2 text-center">
-                <li><a href="#" class="hover:underline text-white">Support Client</a></li>
+                <li><a href="Supportpage.html" class="hover:underline text-white">Support Client</a></li>
                 <li><a href="#" class="hover:underline text-white">Ways You Can Pay</a></li>
             </ul>
             <div class="flex justify-center mt-4">
@@ -126,5 +126,48 @@
         </div>
     </div>
 </footer>
+
+<!-- Modale de confirmation -->
+<div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+        <h3 class="text-2xl font-bold text-[#3d69c6] mb-4">Payment Successful!</h3>
+        <p class="text-gray-700 mb-6">Your payment has been processed successfully.</p>
+        <button id="closeModal" class="bg-[#3d69c6] text-white px-6 py-2 rounded-full font-semibold">
+            Close
+        </button>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Récupérer les éléments de la modale
+        const modal = document.getElementById("confirmationModal");
+        const closeModalButton = document.getElementById("closeModal");
+        const payButton = document.querySelector("button[type='submit']");
+
+        // Gérer le clic sur le bouton "Pay"
+        payButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Empêcher la soumission du formulaire
+            modal.classList.remove("hidden"); // Afficher la modale
+
+            // Rediriger après 3 secondes (optionnel)
+            setTimeout(function () {
+                window.location.href = "thank-you.html"; // Rediriger vers une page de remerciement
+            }, 3000);
+        });
+
+        // Gérer le clic sur le bouton "Close"
+        closeModalButton.addEventListener("click", function () {
+            modal.classList.add("hidden"); // Masquer la modale
+        });
+
+        // Fermer la modale en cliquant à l'extérieur
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.classList.add("hidden");
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

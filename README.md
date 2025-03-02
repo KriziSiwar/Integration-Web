@@ -22,7 +22,7 @@ besoins spécifiques.
 ### 📌 Prérequis
 - Node.js
 - Git
-- Base de données: MySQL
+-Tailwind CSS
 
 ### 🔧 Installation et Exécution
 -Installez Tailwind CSS et ses dépendances en utilisant la commande npm.

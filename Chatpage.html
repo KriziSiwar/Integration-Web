@@ -33,14 +33,38 @@
             height: 200px; 
             width: 100%; 
         }
+
+        /* Mobile menu styles */
+        #mobileMenu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #mobileMenu.active {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="font-sans flex flex-col min-h-screen">
-    <nav class="bg-white shadow-md px-20 py-6 flex justify-between items-center">
-        <h1 class="text-4xl font-bold text-[#3d69c6] hover:text-blue-800 cursor-pointer font-[Caveat]">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md px-4 sm:px-10 md:px-16 lg:px-20 py-4 md:py-6 flex justify-between items-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-[#3d69c6] hover:text-blue-800 cursor-pointer font-[Caveat]">
             Click&Go
         </h1>
-        <div class="flex items-center space-x-10">
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-10">
             <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
                 <span class="text-xl">Wishlist</span>
                 <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,11 +84,43 @@
                 </svg>
             </a>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="lg:hidden flex flex-col space-y-1.5">
+            <span class="block w-6 h-0.5 bg-[#3d69c6]"></span>
+            <span class="block w-6 h-0.5 bg-[#3d69c6]"></span>
+            <span class="block w-6 h-0.5 bg-[#3d69c6]"></span>
+        </button>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu">
+            <button id="closeMenu" class="absolute top-6 right-6 text-[#3d69c6] text-3xl">&times;</button>
+            <div class="flex flex-col items-center space-y-8">
+                <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                    <span class="text-2xl">Wishlist</span>
+                    <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </a>
+                <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                    <span class="text-2xl">Cart</span>
+                    <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l1 2m4 13a2 2 0 1 0 4 0m-4 0a2 2 0 1 1 4 0m1-4H7V6h13l-2 8H7"/>
+                    </svg>
+                </a>
+                <a href="#" class="flex items-center font-bold text-[#3d69c6] hover:text-blue-800 space-x-2 cursor-pointer font-[Caveat]">
+                    <span class="text-2xl">Profile</span>
+                    <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A9.97 9.97 0 0 1 12 15.5c2.172 0 4.187.69 5.88 1.804M15.5 10a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </nav>
 
     <!-- Chatbot Integration with Blurred Background -->
-    <div class="flex-grow bg-blur flex justify-center items-center py-10 relative overflow-hidden">
-        <div class="bg-white shadow-lg rounded-lg w-full max-w-md overflow-hidden h-[600px] flex flex-col z-10">
+    <div class="flex-grow bg-blur flex justify-center items-center py-6 sm:py-8 md:py-10 relative overflow-hidden">
+        <div class="bg-white shadow-lg rounded-lg w-full max-w-xs sm:max-w-sm md:max-w-md mx-4 overflow-hidden h-[500px] sm:h-[550px] md:h-[600px] flex flex-col z-10">
             <!-- Chatbot Header -->
             <div class="bg-gray-100 px-4 py-3 flex justify-between items-center border-b">
                 <div class="flex items-center">
@@ -91,7 +147,7 @@
                 </div>
 
                 <!-- Map Element -->
-                <div id="map" class="w-full h-40 rounded-lg overflow-hidden my-2 bg-gray-200 relative"></div>
+                <div id="map" class="w-full h-32 sm:h-36 md:h-40 rounded-lg overflow-hidden my-2 bg-gray-200 relative"></div>
                 
                 <!-- User Message -->
                 <div class="flex justify-end">
@@ -106,21 +162,21 @@
                         <p class="text-gray-800 text-sm">Great! Here are some yoga options near you:</p>
                     </div>
                     <div class="flex space-x-3 overflow-x-auto py-2">
-                        <div class="bg-white rounded-lg shadow-sm min-w-[160px] overflow-hidden">
-                            <div class="h-24 bg-gray-300 relative">
+                        <div class="bg-white rounded-lg shadow-sm min-w-[140px] sm:min-w-[160px] overflow-hidden">
+                            <div class="h-20 sm:h-24 bg-gray-300 relative">
                                 <img src="/images/outdooryoga.jpeg" alt="Outdoor Yoga" class="w-full h-full object-cover" />
                             </div>
                             <div class="p-2">
-                                <h3 class="font-medium text-sm">Outdoor Yoga Atlanta</h3>
+                                <h3 class="font-medium text-xs sm:text-sm">Outdoor Yoga Atlanta</h3>
                                 <p class="text-xs text-gray-500">From $45/hr</p>
                             </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-sm min-w-[160px] overflow-hidden">
-                            <div class="h-24 bg-gray-300 relative">
+                        <div class="bg-white rounded-lg shadow-sm min-w-[140px] sm:min-w-[160px] overflow-hidden">
+                            <div class="h-20 sm:h-24 bg-gray-300 relative">
                                 <img src="/images/yogaTunis.jpg" alt="Yoga Tunis" class="w-full h-full object-cover" />
                             </div>
                             <div class="p-2">
-                                <h3 class="font-medium text-sm">Yoga Tunis</h3>
+                                <h3 class="font-medium text-xs sm:text-sm">Yoga Tunis</h3>
                                 <p class="text-xs text-gray-500">From $35/hr</p>
                             </div>
                         </div>
@@ -133,7 +189,7 @@
                 <div class="relative">
                     <input type="text" placeholder="Type a message..." class="w-full rounded-full py-2 px-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12">
                     <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                         </svg>
                     </button>
@@ -141,7 +197,7 @@
                 
                 <!-- Find your activity button -->
                 <div class="mt-3 flex justify-center">
-                    <button class="bg-blue-600 text-white rounded-full px-6 py-2 text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button class="bg-blue-600 text-white rounded-full px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         Find your activity now!
                     </button>
                 </div>
@@ -150,17 +206,17 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-[#3d69c6] text-white py-8 px-20">
-        <div class="grid grid-cols-3 gap-8">
-            <div class="flex flex-col space-y-4 px-20">
-                <label for="language" class="block font-semibold text-white text-lg">Language</label>
+    <footer class="bg-[#3d69c6] text-white py-6 md:py-8 px-4 sm:px-6 md:px-10 lg:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="flex flex-col space-y-4 px-2 sm:px-6 lg:px-20">
+                <label for="language" class="block font-semibold text-white text-base md:text-lg">Language</label>
                 <select id="language" class="text-gray-900 bg-gray-300 px-3 py-2 rounded w-full">
                     <option>English</option>
                     <option>French</option>
                     <option>Arabic</option>
                 </select>
 
-                <label for="currency" class="block font-semibold text-white text-lg">Currency</label>
+                <label for="currency" class="block font-semibold text-white text-base md:text-lg">Currency</label>
                 <select id="currency" class="text-gray-900 bg-gray-300 px-3 py-2 rounded w-full">
                     <option>Dinar</option>
                     <option>Euro</option>
@@ -171,12 +227,12 @@
             <div class="flex flex-col items-center space-y-4">
                 <h3 class="font-semibold mb-2 text-white">Mobile</h3>
                 <div class="flex flex-col items-center space-y-4">
-                    <img src="Images/google.png" alt="Google Play" class="w-40 h-12 object-cover">
-                    <img src="Images/app.png" alt="App Store" class="w-40 h-12 object-cover">
+                    <img src="Images/google.png" alt="Google Play" class="w-36 sm:w-40 h-10 sm:h-12 object-cover">
+                    <img src="Images/app.png" alt="App Store" class="w-36 sm:w-40 h-10 sm:h-12 object-cover">
                 </div>
             </div>
 
-            <div class="flex flex-col items-center space-y-4 px-20">
+            <div class="flex flex-col items-center space-y-4 px-2 sm:px-6 lg:px-20">
                 <h3 class="font-semibold mb-2 text-center text-white">About Us</h3>
                 <ul class="space-y-2 text-center">
                     <li><a href="#" class="hover:underline text-white">Support Client</a></li>
@@ -184,15 +240,15 @@
                 </ul>
                 
                 <div class="flex justify-center mt-4">
-                    <img src="Images/paypal.png" alt="PayPal" class="w-56 h-16 object-contain">
+                    <img src="Images/paypal.png" alt="PayPal" class="w-40 sm:w-56 h-12 sm:h-16 object-contain">
                 </div>
 
                 <div class="flex justify-center space-x-4 mt-4">
                     <a href="#" class="text-black hover:text-red-600">
-                        <i class="fab fa-facebook-f text-2xl"></i>
+                        <i class="fab fa-facebook-f text-xl sm:text-2xl"></i>
                     </a>
                     <a href="#" class="text-black hover:text-red-600">
-                        <i class="fab fa-instagram text-2xl"></i>
+                        <i class="fab fa-instagram text-xl sm:text-2xl"></i>
                     </a>
                 </div>
             </div>
@@ -202,7 +258,7 @@
     <!-- Google Maps API Script -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initMap" async defer></script>
 
-    <!-- Map Initialization Script -->
+    <!-- Map Initialization Script and Mobile Menu Logic -->
     <script>
         function initMap() {
             const mapOptions = {
@@ -211,6 +267,21 @@
             };
             const map = new google.maps.Map(document.getElementById('map'), mapOptions);
         }
+
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+            });
+
+            closeMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
     </script>
 </body>
-</html> 
+</html>
